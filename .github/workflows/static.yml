@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Snack Dimension Portal</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: system-ui, Arial, sans-serif;
+      background: linear-gradient(135deg, #0f172a, #3b0764);
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 20px;
+      padding: 30px;
+      max-width: 500px;
+      width: 100%;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+      backdrop-filter: blur(10px);
+      text-align: center;
+    }
+
+    h1 {
+      margin-top: 0;
+      font-size: 2rem;
+    }
+
+    button {
+      border: none;
+      padding: 12px 18px;
+      border-radius: 12px;
+      font-size: 1rem;
+      cursor: pointer;
+      background: #a855f7;
+      color: white;
+      transition: 0.2s;
+    }
+
+    button:hover {
+      background: #c084fc;
+      transform: scale(1.03);
+    }
+
+    .snack {
+      margin-top: 20px;
+      font-size: 1.2rem;
+      padding: 15px;
+      border-radius: 12px;
+      background: rgba(0,0,0,0.25);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .footer {
+      margin-top: 25px;
+      opacity: 0.7;
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>🍪 Snack Dimension Portal</h1>
+    <p>Click the button to summon a snack from another timeline.</p>
+
+    <button onclick="generateSnack()">Summon Snack</button>
+
+    <div class="snack" id="snackBox">
+      Your snack awaits...
+    </div>
+
+    <div class="footer">
+      ⚠️ Side effects may include joy, confusion, and hunger.
+    </div>
+  </div>
+
+  <script>
+    const snacks = [
+      "Quantum Nachos (they exist and don’t exist)",
+      "Void Donut (tastes like darkness and sugar)",
+      "Pixel Pizza Slice (8-bit crunchy)",
+      "Spicy Moon Cheese Pebbles",
+      "Time-Traveling Taco (arrives before you order it)",
+      "Cosmic Cinnamon Roll (spirals infinitely)",
+      "Alien Jelly Cubes (they wiggle in Morse code)",
+      "Glitch Popcorn (sometimes becomes grapes)",
+      "Mystery Soup (do not run as admin)",
+      "Neon Pancake Stack (glows aggressively)"
+    ];
+
+    const effects = [
+      "You gain +2 charisma for 10 minutes.",
+      "Your socks become slightly warmer.",
+      "A distant wizard approves.",
+      "Your phone battery increases by 1%.",
+      "You temporarily understand dolphins.",
+      "A crow nods respectfully at you.",
+      "You feel oddly nostalgic for 3027.",
+      "Your fridge becomes proud of you."
+    ];
+
+    function generateSnack() {
+      const snack = snacks[Math.floor(Math.random() * snacks.length)];
+      const effect = effects[Math.floor(Math.random() * effects.length)];
+
+      document.getElementById("snackBox").innerHTML =
+        `<strong>🍴 Snack:</strong> ${snack}<br><br><strong>✨ Effect:</strong> ${effect}`;
+    }
+  </script>
+</body>
+</html>
